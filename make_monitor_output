@@ -1,0 +1,543 @@
+~/esp/gnarl/project$ make monitor 
+Toolchain path: /home/whynot/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+Toolchain version: esp32-2019r1
+Compiler version: 8.2.0
+Python requirements from /home/whynot/esp/esp-idf/requirements.txt are satisfied.
+MONITOR
+--- idf_monitor on /dev/ttyUSB0 115200 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0018,len:4
+load:0x3fff001c,len:6456
+load:0x40078000,len:12200
+load:0x40080400,len:6640
+entry 0x40080774
+I (31) boot: ESP-IDF v4.1-dev-141-ga7e8d87d3 2nd stage bootloader
+I (31) boot: compile time 00:33:09
+I (40) boot: Enabling RNG early entropy source...
+I (40) boot: SPI Speed      : 40MHz
+I (41) boot: SPI Mode       : DIO
+I (45) boot: SPI Flash Size : 4MB
+I (49) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (75) boot:  2 factory          factory app      00 00 00010000 00200000
+I (82) boot: End of partition table
+I (86) esp_image: segment 0: paddr=0x00010020 vaddr=0x3f400020 size=0x1499c ( 84380) map
+I (125) esp_image: segment 1: paddr=0x000249c4 vaddr=0x3ffbdb60 size=0x02ed8 ( 11992) load
+I (131) esp_image: segment 2: paddr=0x000278a4 vaddr=0x40080000 size=0x00400 (  1024) load
+0x40080000: _WindowOverflow4 at /home/whynot/esp/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+I (133) esp_image: segment 3: paddr=0x00027cac vaddr=0x40080400 size=0x08364 ( 33636) load
+I (155) esp_image: segment 4: paddr=0x00030018 vaddr=0x400d0018 size=0x459c4 (285124) map
+0x400d0018: _stext at ??:?
+
+I (258) esp_image: segment 5: paddr=0x000759e4 vaddr=0x40088764 size=0x0c99c ( 51612) load
+0x40088764: ld_inq_frm_isr_wrapper at ??:?
+
+I (292) boot: Loaded app from partition at offset 0x10000
+I (292) boot: Disabling RNG early entropy source...
+W (307) cpu_start: Chip revision is higher than the one configured in menuconfig. Suggest to upgrade it.
+I (309) GNARL: subg_rfspy 2.2
+D (329) GNARL: radio version 1.2
+D (329) GNARL: frequency set to 916599975 Hz
+D (629) GNARL: display_loop: op 4 arg 0
+D (629) GNARL: starting gnarl_loop
+D (1389) GNARL: service UUID 0235733b-99c5-4197-b856-69219c2a3845
+device address: fa:fd:a5:c4:0a:24
+D (1429) GNARL: advertising started
+I (1439) GNARL: connected
+D (1439) GNARL: connection handle 0000
+D (1439) GNARL: response count notify handle 000E
+D (1439) GNARL: timer tick notify handle 0011
+D (1639) GNARL: GAP event 15
+D (2019) GNARL: notify 0 for unknown handle 0008
+D (2259) GNARL: notify 1 for response count
+D (2349) GNARL: BLE firmware version = ble_rfspy 2.0
+data_access: received 2 bytes: 01 02
+I (2419) GNARL: CmdGetVersion
+send_bytes (14): 73 75 62 67 5F 72 66 73 70 79 20 32 2E 32
+D (2419) GNARL: GAP event 13
+D (2419) GNARL: notify for response count 1
+D (2429) GNARL: rfspy_command 2, queue length 0
+data_access: sending 15 bytes: DD 73 75 62 67 5F 72 66 73 70 79 20 32 2E 32
+D (2589) GNARL: notify 1 for timer tick
+D (5729) GNARL: display_loop: op 0 arg 1
+D (10839) GNARL: display_loop: op 1 arg -63
+D (10839) GNARL: phone RSSI = -63
+D (10839) GNARL: display_loop: op 3 arg 2
+D (10839) GNARL: command time = 2
+data_access: received 2 bytes: 01 0D
+I (28579) GNARL: CmdResetRadioConfig
+D (28579) GNARL: send_code DD
+D (28579) GNARL: GAP event 13
+D (28579) GNARL: notify for response count 2
+D (28579) GNARL: display_loop: op 1 arg -68
+D (28579) GNARL: rfspy_command 13, queue length 0
+D (28589) GNARL: phone RSSI = -68
+D (28589) GNARL: display_loop: op 3 arg 28
+D (28599) GNARL: command time = 28
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0C 59
+I (28699) GNARL: CmdUpdateRegister
+D (28699) GNARL: update_register: addr 0C value 59
+D (28699) GNARL: update_register: addr 0C ignored
+D (28699) GNARL: send_code DD
+D (28709) GNARL: GAP event 13
+D (28709) GNARL: notify for response count 3
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0F 62
+I (28819) GNARL: CmdUpdateRegister
+D (28819) GNARL: update_register: addr 0F value 62
+D (28819) GNARL: update_register: addr 0F ignored
+D (28819) GNARL: send_code DD
+D (28829) GNARL: GAP event 13
+D (28829) GNARL: notify for response count 4
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 10 1A
+I (28939) GNARL: CmdUpdateRegister
+D (28939) GNARL: update_register: addr 10 value 1A
+D (28939) GNARL: update_register: addr 10 ignored
+D (28939) GNARL: send_code DD
+D (28949) GNARL: GAP event 13
+D (28949) GNARL: notify for response count 5
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 11 13
+I (29059) GNARL: CmdUpdateRegister
+D (29059) GNARL: update_register: addr 11 value 13
+D (29059) GNARL: update_register: addr 11 ignored
+D (29059) GNARL: send_code DD
+D (29069) GNARL: GAP event 13
+D (29069) GNARL: notify for response count 6
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 C8 01 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+I (29179) GNARL: CmdSendAndListen
+D (29179) GNARL: send_and_listen: len 24 send_channel 0 repeat_count 0 delay_ms 0
+D (29189) GNARL: send_and_listen: listen_channel 0 timeout_ms 200 retry_count 1
+TX: sending 11 bytes: A9 66 59 99 69 B1 68 D5 55 69 50
+D (29229) GNARL: rfspy_command 5, queue length 0
+TX: sending 11 bytes: A9 66 59 99 69 B1 68 D5 55 69 50
+D (29649) GNARL: RX: timeout
+D (29649) GNARL: send_code AA
+D (29649) GNARL: GAP event 13
+D (29649) GNARL: notify for response count 7
+D (29649) GNARL: display_loop: op 2 arg -127
+D (29649) GNARL: pump RSSI = -127
+D (29659) GNARL: display_loop: op 1 arg -68
+D (29659) GNARL: phone RSSI = -68
+D (29659) GNARL: display_loop: op 3 arg 29
+D (29669) GNARL: command time = 29
+data_access: sending 1 bytes: AA
+data_access: received 26 bytes: 19 05 00 FF 00 00 00 00 00 2E E0 00 00 00 A9 66 59 99 69 B1 94 D5 55 68 E0 00
+I (29749) GNARL: CmdSendAndListen
+D (29749) GNARL: send_and_listen: len 24 send_channel 0 repeat_count 255 delay_ms 0
+D (29759) GNARL: send_and_listen: listen_channel 0 timeout_ms 12000 retry_count 0
+TX: sending 11 bytes: A9 66 59 99 69 B1 94 D5 55 68 E0
+D (35009) GNARL: rfspy_command 5, queue length 0
+D (46999) GNARL: RX: timeout
+D (46999) GNARL: send_code AA
+D (46999) GNARL: GAP event 13
+D (46999) GNARL: notify for response count 8
+D (46999) GNARL: display_loop: op 2 arg -127
+D (46999) GNARL: pump RSSI = -127
+D (47009) GNARL: display_loop: op 1 arg -65
+D (47009) GNARL: phone RSSI = -65
+D (47009) GNARL: display_loop: op 3 arg 46
+D (47019) GNARL: command time = 46
+data_access: sending 1 bytes: AA
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+I (47119) GNARL: CmdGetPacket
+D (47119) GNARL: get_packet: listen_channel 0 timeout_ms 240000
+D (47119) GNARL: rfspy_command 3, queue length 0
+D (61389) GNARL: timer tick 1
+D (61389) GNARL: GAP event 13
+D (61389) GNARL: notify for timer tick
+D (121389) GNARL: timer tick 2
+D (121389) GNARL: GAP event 13
+D (121389) GNARL: notify for timer tick
+D (181389) GNARL: timer tick 3
+D (181389) GNARL: GAP event 13
+D (181389) GNARL: notify for timer tick
+data_access: received 2 bytes: 01 0E
+D (197739) GNARL: rfspy_command 14, queue length 1
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+D (199719) GNARL: rfspy_command 3, queue length 2
+data_access: received 2 bytes: 01 0E
+D (202929) GNARL: rfspy_command 14, queue length 3
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+D (204879) GNARL: rfspy_command 3, queue length 4
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 C8 01 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+D (210819) GNARL: rfspy_command 5, queue length 5
+data_access: received 26 bytes: 19 05 00 FF 00 00 00 00 00 2E E0 00 00 00 A9 66 59 99 69 B1 94 D5 55 68 E0 00
+D (213279) GNARL: rfspy_command 5, queue length 6
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+D (233139) GNARL: rfspy_command 3, queue length 7
+D (241389) GNARL: timer tick 4
+D (241389) GNARL: GAP event 13
+D (241389) GNARL: notify for timer tick
+data_access: received 2 bytes: 01 0E
+D (246219) GNARL: rfspy_command 14, queue length 8
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+D (248229) GNARL: rfspy_command 3, queue length 9
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 C8 01 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+D (252129) GNARL: rfspy_command 5, queue length 10
+data_access: received 122 bytes: 79 05 00 00 00 00 00 00 00 00 C8 03 00 00 A9 66 59 99 69 B1 94 D5 72 57 15 71 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 B3 10 00
+E (254649) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+E (257679) GNARL: rfspy_command: cannot queue request for command 3
+data_access: received 2 bytes: 01 0E
+E (263139) GNARL: rfspy_command: cannot queue request for command 14
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+E (265149) GNARL: rfspy_command: cannot queue request for command 3
+data_access: received 4 bytes: 03 06 0B 77
+I (273609) GNARL: CmdUpdateRegister
+D (273609) GNARL: update_register: addr 0B value 77
+D (273609) GNARL: invalid frequency (43579 Hz)
+D (273609) GNARL: send_code DD
+D (273619) GNARL: GAP event 13
+D (273619) GNARL: notify for response count 9
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 2F
+I (273789) GNARL: CmdUpdateRegister
+D (273789) GNARL: update_register: addr 0A value 2F
+D (273789) GNARL: invalid frequency (4449829 Hz)
+D (273789) GNARL: send_code DD
+D (273799) GNARL: GAP event 13
+D (273799) GNARL: notify for response count 10
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (273909) GNARL: CmdUpdateRegister
+D (273909) GNARL: update_register: addr 09 value 24
+I (273909) GNARL: setting frequency to 868449829 Hz
+D (273909) GNARL: send_code DD
+D (273919) GNARL: GAP event 13
+D (273919) GNARL: notify for response count 11
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 C8 01 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (274029) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 FF 00 00 00 00 00 2E E0 00 00 00 A9 66 59 99 69 B1 94 D5 55 68 E0 00
+E (276459) GNARL: rfspy_command: cannot queue request for command 5
+D (287119) GNARL: RX: timeout
+D (287119) GNARL: send_code AA
+D (287119) GNARL: GAP event 13
+D (287119) GNARL: notify for response count 12
+E (287119) GNARL: unimplemented rfspy command 14
+D (287119) GNARL: display_loop: op 1 arg -71
+I (287119) GNARL: CmdGetPacket
+D (287129) GNARL: phone RSSI = -71
+D (287129) GNARL: get_packet: listen_channel 0 timeout_ms 240000
+D (287139) GNARL: display_loop: op 3 arg 286
+D (287149) GNARL: command time = 286
+D (287149) GNARL: display_loop: op 1 arg -77
+D (287149) GNARL: phone RSSI = -77
+D (287159) GNARL: display_loop: op 3 arg 286
+D (287159) GNARL: command time = 286
+data_access: sending 1 bytes: AA
+data_access: received 4 bytes: 03 06 0B 55
+I (287229) GNARL: CmdUpdateRegister
+D (287229) GNARL: update_register: addr 0B value 55
+I (287229) GNARL: setting frequency to 868437377 Hz
+D (287229) GNARL: send_code DD
+D (287239) GNARL: GAP event 13
+D (287239) GNARL: notify for response count 13
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 2D
+I (287349) GNARL: CmdUpdateRegister
+D (287349) GNARL: update_register: addr 0A value 2D
+I (287349) GNARL: setting frequency to 868249877 Hz
+D (287349) GNARL: send_code DD
+D (287359) GNARL: GAP event 13
+D (287359) GNARL: notify for response count 14
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (287469) GNARL: CmdUpdateRegister
+D (287469) GNARL: update_register: addr 09 value 24
+I (287469) GNARL: setting frequency to 868249877 Hz
+D (287469) GNARL: send_code DD
+D (287479) GNARL: GAP event 13
+D (287479) GNARL: notify for response count 15
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+D (287589) GNARL: rfspy_command 5, queue length 9
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+D (290199) GNARL: rfspy_command 5, queue length 10
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (292809) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B DD
+I (295449) GNARL: CmdUpdateRegister
+D (295449) GNARL: update_register: addr 0B value DD
+I (295449) GNARL: setting frequency to 868299682 Hz
+D (295449) GNARL: send_code DD
+D (295459) GNARL: GAP event 13
+D (295459) GNARL: notify for response count 16
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 2D
+I (295569) GNARL: CmdUpdateRegister
+D (295569) GNARL: update_register: addr 0A value 2D
+I (295569) GNARL: setting frequency to 868299682 Hz
+D (295569) GNARL: send_code DD
+D (295569) GNARL: GAP event 13
+D (295579) GNARL: notify for response count 17
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (295689) GNARL: CmdUpdateRegister
+D (295689) GNARL: update_register: addr 09 value 24
+I (295689) GNARL: setting frequency to 868299682 Hz
+D (295689) GNARL: send_code DD
+D (295689) GNARL: GAP event 13
+D (295699) GNARL: notify for response count 18
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (295809) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (298449) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (301029) GNARL: rfspy_command: cannot queue request for command 5
+D (301389) GNARL: timer tick 5
+D (301389) GNARL: GAP event 13
+D (301389) GNARL: notify for timer tick
+data_access: received 4 bytes: 03 06 0B 66
+I (303669) GNARL: CmdUpdateRegister
+D (303669) GNARL: update_register: addr 0B value 66
+I (303669) GNARL: setting frequency to 868256103 Hz
+D (303669) GNARL: send_code DD
+D (303679) GNARL: GAP event 13
+D (303679) GNARL: notify for response count 19
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 2E
+I (303789) GNARL: CmdUpdateRegister
+D (303789) GNARL: update_register: addr 0A value 2E
+I (303789) GNARL: setting frequency to 868349853 Hz
+D (303789) GNARL: send_code DD
+D (303789) GNARL: GAP event 13
+D (303799) GNARL: notify for response count 20
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (303909) GNARL: CmdUpdateRegister
+D (303909) GNARL: update_register: addr 09 value 24
+I (303909) GNARL: setting frequency to 868349853 Hz
+D (303909) GNARL: send_code DD
+D (303909) GNARL: GAP event 13
+D (303919) GNARL: notify for response count 21
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (304029) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (306639) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (309249) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B EE
+I (311859) GNARL: CmdUpdateRegister
+D (311859) GNARL: update_register: addr 0B value EE
+I (311859) GNARL: setting frequency to 868399658 Hz
+D (311859) GNARL: send_code DD
+D (311869) GNARL: GAP event 13
+D (311869) GNARL: notify for response count 22
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 2E
+I (311979) GNARL: CmdUpdateRegister
+D (311979) GNARL: update_register: addr 0A value 2E
+I (311979) GNARL: setting frequency to 868399658 Hz
+D (311979) GNARL: send_code DD
+D (311979) GNARL: GAP event 13
+D (311989) GNARL: notify for response count 23
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (312099) GNARL: CmdUpdateRegister
+D (312099) GNARL: update_register: addr 09 value 24
+I (312099) GNARL: setting frequency to 868399658 Hz
+D (312099) GNARL: send_code DD
+D (312099) GNARL: GAP event 13
+D (312109) GNARL: notify for response count 24
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (312219) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (314829) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (317499) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B 77
+I (320079) GNARL: CmdUpdateRegister
+D (320079) GNARL: update_register: addr 0B value 77
+I (320079) GNARL: setting frequency to 868356079 Hz
+D (320079) GNARL: send_code DD
+D (320089) GNARL: GAP event 13
+D (320089) GNARL: notify for response count 25
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 2F
+I (320199) GNARL: CmdUpdateRegister
+D (320199) GNARL: update_register: addr 0A value 2F
+I (320199) GNARL: setting frequency to 868449829 Hz
+D (320199) GNARL: send_code DD
+D (320199) GNARL: GAP event 13
+D (320209) GNARL: notify for response count 26
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (320319) GNARL: CmdUpdateRegister
+D (320319) GNARL: update_register: addr 09 value 24
+I (320319) GNARL: setting frequency to 868449829 Hz
+D (320319) GNARL: send_code DD
+D (320319) GNARL: GAP event 13
+D (320329) GNARL: notify for response count 27
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (320469) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (323049) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (325659) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B 00
+I (328289) GNARL: CmdUpdateRegister
+D (328299) GNARL: update_register: addr 0B value 00
+I (328299) GNARL: setting frequency to 868406250 Hz
+D (328299) GNARL: send_code DD
+D (328309) GNARL: GAP event 13
+D (328309) GNARL: notify for response count 28
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 30
+I (328409) GNARL: CmdUpdateRegister
+D (328419) GNARL: update_register: addr 0A value 30
+I (328419) GNARL: setting frequency to 868500000 Hz
+D (328419) GNARL: send_code DD
+D (328419) GNARL: GAP event 13
+D (328429) GNARL: notify for response count 29
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (328529) GNARL: CmdUpdateRegister
+D (328539) GNARL: update_register: addr 09 value 24
+I (328539) GNARL: setting frequency to 868500000 Hz
+D (328539) GNARL: send_code DD
+D (328539) GNARL: GAP event 13
+D (328549) GNARL: notify for response count 30
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (328659) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (331269) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (333879) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B 88
+I (336509) GNARL: CmdUpdateRegister
+D (336509) GNARL: update_register: addr 0B value 88
+I (336519) GNARL: setting frequency to 868549804 Hz
+D (336519) GNARL: send_code DD
+D (336529) GNARL: GAP event 13
+D (336529) GNARL: notify for response count 31
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 30
+I (336629) GNARL: CmdUpdateRegister
+D (336629) GNARL: update_register: addr 0A value 30
+I (336639) GNARL: setting frequency to 868549804 Hz
+D (336639) GNARL: send_code DD
+D (336639) GNARL: GAP event 13
+D (336639) GNARL: notify for response count 32
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (336749) GNARL: CmdUpdateRegister
+D (336749) GNARL: update_register: addr 09 value 24
+I (336759) GNARL: setting frequency to 868549804 Hz
+D (336759) GNARL: send_code DD
+D (336759) GNARL: GAP event 13
+D (336759) GNARL: notify for response count 33
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (336879) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (339489) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (342099) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B 11
+I (344699) GNARL: CmdUpdateRegister
+D (344699) GNARL: update_register: addr 0B value 11
+I (344699) GNARL: setting frequency to 868506225 Hz
+D (344709) GNARL: send_code DD
+D (344709) GNARL: GAP event 13
+D (344719) GNARL: notify for response count 34
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 31
+I (344819) GNARL: CmdUpdateRegister
+D (344819) GNARL: update_register: addr 0A value 31
+I (344819) GNARL: setting frequency to 868599975 Hz
+D (344829) GNARL: send_code DD
+D (344829) GNARL: GAP event 13
+D (344829) GNARL: notify for response count 35
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (344939) GNARL: CmdUpdateRegister
+D (344939) GNARL: update_register: addr 09 value 24
+I (344939) GNARL: setting frequency to 868599975 Hz
+D (344949) GNARL: send_code DD
+D (344949) GNARL: GAP event 13
+D (344949) GNARL: notify for response count 36
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (345069) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (347679) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (350289) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B 99
+I (352889) GNARL: CmdUpdateRegister
+D (352889) GNARL: update_register: addr 0B value 99
+I (352889) GNARL: setting frequency to 868649780 Hz
+D (352899) GNARL: send_code DD
+D (352899) GNARL: GAP event 13
+D (352909) GNARL: notify for response count 37
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 31
+I (353009) GNARL: CmdUpdateRegister
+D (353009) GNARL: update_register: addr 0A value 31
+I (353009) GNARL: setting frequency to 868649780 Hz
+D (353019) GNARL: send_code DD
+D (353019) GNARL: GAP event 13
+D (353019) GNARL: notify for response count 38
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 09 24
+I (353129) GNARL: CmdUpdateRegister
+D (353129) GNARL: update_register: addr 09 value 24
+I (353129) GNARL: setting frequency to 868649780 Hz
+D (353139) GNARL: send_code DD
+D (353139) GNARL: GAP event 13
+D (353139) GNARL: notify for response count 39
+data_access: sending 1 bytes: DD
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (353289) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (355899) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 26 bytes: 19 05 00 00 00 00 00 00 00 00 82 03 00 00 A9 66 59 99 69 B1 68 D5 55 69 50 00
+E (358509) GNARL: rfspy_command: cannot queue request for command 5
+data_access: received 4 bytes: 03 06 0B 77
+I (361139) GNARL: CmdUpdateRegister
+D (361139) GNARL: update_register: addr 0B value 77
+I (361139) GNARL: setting frequency to 868637329 Hz
+D (361149) GNARL: send_code DD
+D (361149) GNARL: GAP event 13
+D (361159) GNARL: notify for response count 40
+data_access: sending 1 bytes: DD
+data_access: received 4 bytes: 03 06 0A 2F
+I (361289) GNARL: CmdUpdateRegister
+D (361289) GNARL: update_register: addr 0A value 2F
+I (361289) GNARL: setting frequency to 868449829 Hz
+D (361299) GNARL: send_code DD
+D (361299) GNARL: GAP event 13
+D (361299) GNARL: notify for response count 41
+data_access: sending 1 bytes: DD
+D (361389) GNARL: timer tick 6
+D (361389) GNARL: GAP event 13
+D (361389) GNARL: notify for timer tick
+data_access: received 4 bytes: 03 06 09 24
+I (361409) GNARL: CmdUpdateRegister
+D (361409) GNARL: update_register: addr 09 value 24
+I (361409) GNARL: setting frequency to 868449829 Hz
+D (361419) GNARL: send_code DD
+D (361419) GNARL: GAP event 13
+D (361419) GNARL: notify for response count 42
+data_access: sending 1 bytes: DD
+data_access: received 7 bytes: 06 03 00 00 03 A9 80
+E (361529) GNARL: rfspy_command: cannot queue request for command 3
